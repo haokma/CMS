@@ -3,7 +3,7 @@ import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
 const axiosClient = axios.create({
   baseURL: "",
   headers: {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   },
 });
 
@@ -12,7 +12,7 @@ axiosClient.interceptors.request.use(
     // Do something before request is sent
     return config;
   },
-  function (error:AxiosError) {
+  function (error: AxiosError) {
     // Do something with request error
     return Promise.reject(error);
   }
@@ -30,6 +30,5 @@ axiosClient.interceptors.response.use(
     return Promise.reject(error);
   }
 );
-
 
 export default axiosClient;
