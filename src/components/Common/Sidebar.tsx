@@ -14,12 +14,13 @@ const useStyles = makeStyles((theme) => ({
     width: "100%",
     maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(20, 2),
   },
 
   link: {
     color: "inherit",
     textDecoration: "none",
-
+    fontSize: "12px",
     "&.active > div": {
       backgroundColor: theme.palette.action.selected,
     },

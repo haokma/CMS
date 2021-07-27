@@ -28,6 +28,8 @@ const useStyles = makeStyles((theme) => ({
   main: {
     gridArea: "main",
     backgroundColor: theme.palette.background.paper,
+  },
+  content: {
     padding: theme.spacing(2, 3),
   },
 }));
@@ -38,30 +40,29 @@ export default function AdminLayout(props: AdminLayoutProps) {
 
   return (
     <Box className={classes.root}>
-      <Box className={classes.header}>
-        <Header />
-      </Box>
-
       <Box className={classes.sidebar}>
         <Sidebar />
       </Box>
-
       <Box className={classes.main}>
-        <Switch>
-          <Route path="/admin/dashboard">
-            <Dashboard />
-          </Route>
-
-          <Route path="/admin/product">
-            <ListProduct />
-          </Route>
-          <Route path="/admin/user">
-            <ListUser />
-          </Route>
-          <Route path="/admin/category">
-            <ListCategory />
-          </Route>
-        </Switch>
+        <Box className={classes.header}>
+          <Header />
+        </Box>
+        <Box className={classes.content}>
+          <Switch>
+            <Route path="/admin/dashboard">
+              <Dashboard />
+            </Route>
+            <Route path="/admin/product">
+              <ListProduct />
+            </Route>
+            <Route path="/admin/user">
+              <ListUser />
+            </Route>
+            <Route path="/admin/category">
+              <ListCategory />
+            </Route>
+          </Switch>
+        </Box>
       </Box>
     </Box>
   );
